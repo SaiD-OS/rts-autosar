@@ -1,0 +1,36 @@
+OIL_VERSION = "4.0";
+
+CPU Car {  	
+  OS config {			
+    STATUS = EXTENDED;
+    BUILD = TRUE { 
+      APP_SRC = "mycar.c";
+      TRAMPOLINE_BASE_PATH = "../../..";
+      APP_NAME = "mycar_exe";
+      LINKER = "gcc";
+      SYSTEM = PYTHON;
+    };
+  };
+
+    APPMODE stdAppmode {}; 
+
+TASK Brake {
+    PRIORITY = 3;
+    AUTOSTART = TRUE{APPMODE= stdAppmode;};
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+  };
+  TASK Steer {
+    PRIORITY = 2;
+    AUTOSTART = TRUE{APPMODE= stdAppmode;};
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+  };
+  TASK Accelerate {
+    PRIORITY = 1;
+    AUTOSTART = TRUE{APPMODE= stdAppmode;};
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+  };
+  
+};
