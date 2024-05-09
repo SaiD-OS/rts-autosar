@@ -1,0 +1,10 @@
+/*
+ * Files for can_demo_driver
+ */
+ CPU net_can_demo_driver_files {
+  LIBRARY net_can_demo_driver {
+    PATH = "drivers/can/posix";
+    CHEADER = "tpl_posix_can_driver.h";
+    CFILE = "tpl_posix_can_driver.c";
+  };
+};
